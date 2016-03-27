@@ -7,14 +7,14 @@
 if [ $# -eq 0 ]
   then
     # Print usage message
-    echo "usage: ./quick.sh <data> <file>"
+    /usr/bin/echo "usage: ./quick.sh <data> <file>"
 fi
 
 # Hard write data to file
-echo $1 > $2
+/usr/bin/echo $1 > $2
 # Add file that was written
-git add $2
-# Commit with user name and datetime as message
-git commit -m "`whoami && date`"
+/usr/bin/git add --all
+# Commit with datetime as message
+/usr/bin/git commit -m "`/usr/bin/date`"
 # Push changes
-git push
+/usr/bin/git push
